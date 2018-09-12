@@ -1,0 +1,18 @@
+    <h2 style="text-align:center;">Logowanie</h2>
+    <div class="container bg-light">
+      <form name="form" (ngSubmit)="f.form.valid && onLogin()" #f="ngForm" novalidate>
+        <div class="form-group">
+          <label for="email">Adres email</label>
+          <input type="email" class="form-control" id="email" [ngClass]="{'is-invalid': f.submitted && !email.valid}" placeholder="wprowadź email" [(ngModel)]="user.email" #email="ngModel" name="email" required>
+          <div *ngIf="f.submitted && !email.valid" class="invalid-feedback"> pole wymagane</div>
+        </div>
+        <div class="form-group" >
+          <label for="password">Hasło</label>
+          <input type="password" class="form-control" [ngClass]="{'is-invalid': f.submitted && !password.valid}" id="password" placeholder="wprowadź hasło" [(ngModel)]="user.password" #password="ngModel" name="password" required>
+          <div *ngIf="f.submitted && !password.valid" class="invalid-feedback">pole wymagane</div>
+        </div>
+        <button type="submit" class="btn btn-primary" >Zaloguj się</button>
+        <button type="button" class="btn btn-primary" routerLink="/register">Zarejestruj się</button>
+      </form>
+    </div>
+
