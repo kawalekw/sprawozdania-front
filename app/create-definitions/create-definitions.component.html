@@ -1,0 +1,48 @@
+<div class="container bg-light">
+  <h2>Tworzenie tematów sprawozdań</h2>
+  <form (ngSubmit)="submit()" #f="ngForm" novalidate>
+
+    <label for="sel1">Kursy:</label>
+    <select class="form-control" id="sel1" (change)="selectedCourse($event)">
+      <option></option>
+      <option value={{course.id}} *ngFor="let course of courses">{{course.name}}</option>
+    </select>
+
+    <div class="form-group">
+      <label>Nazwa tematu</label>
+      <input type="string"  class="form-control" id="definitionName" placeholder=""  name="definitionName" [(ngModel)]="definitionName" required/>
+
+      <label>Data rozpoczęcia tematu</label>
+      <div class="input-group">
+
+
+        <input class="form-control" placeholder="yyyy-mm-dd"
+               name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker" required>
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+        </div>
+
+      </div>
+
+
+      <label>Data zakończenia tematu</label>
+      <div class="input-group">
+
+        <br>
+        <input class="form-control" placeholder="yyyy-mm-dd"
+               name="dp2" [(ngModel)]="model2" ngbDatepicker #d2="ngbDatepicker" required>
+        <div class="input-group-append">
+
+          <button class="btn btn-outline-secondary calendar" (click)="d2.toggle()" type="button"></button>
+        </div>
+
+      </div>
+      <br>
+
+
+
+
+      <button type="submit" class="btn btn-primary">Utwórz temat sprawozdania</button>
+    </div>
+  </form>
+</div>

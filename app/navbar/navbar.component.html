@@ -1,0 +1,40 @@
+<div *ngIf="nav.visible">
+
+    <ul class="nav nav-pills nav-tabs flex-column bg-light" id="tab" role="tablist">
+      <div *ngIf="nav.studentVisible">
+      <li class="nav-item">
+        <a class="nav-link " id="summary" routerLink="summary" routerLinkActive="active">Wykaz sprawozdań</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " id="reports" routerLink="reports" routerLinkActive="active">Dodawanie sprawozdań</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" class="nav-link " id="courses" routerLink="join-courses" routerLinkActive="active">Dołącz do kursu</a>
+      </li>
+      </div>
+      <div *ngIf="nav.teacherVisible">
+      <li class="nav-item">
+        <a class="nav-link" class="nav-link " id="courses" routerLink="create-courses" routerLinkActive="active">Utwórz kursy</a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link" class="nav-link " id="courses" routerLink="create-definitions" routerLinkActive="active">Utwórz tematy sprawozdań</a>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" class="nav-link " id="courses" routerLink="courses" routerLinkActive="active">Moje kursy</a>
+      </li>
+        <li class="nav-item">
+          <a class="nav-link" class="nav-link " id="courses" routerLink="modify-courses" routerLinkActive="active">Modyfikuj kursy</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" class="nav-link " id="courses" routerLink="modify-definitions" routerLinkActive="active">Modyfikuj tematy sprawozdań</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" class="nav-link " id="courses" routerLink="manage-students" routerLinkActive="active">Zarządzaj studentami</a>
+        </li>
+
+      </div>
+      <li class="nav-item">
+        <a class="nav-link " id="logout" (click)="logout()" routerLink="login" routerLinkActive="active">Wyloguj</a>
+      </li>
+    </ul>
+</div>
