@@ -1,2 +1,0 @@
-<div style="text-align:center;" *ngIf="message" [ngClass]="{'alert alert-success ': message.type === 'success', 'alert alert-danger ': message.type === 'error' }">
-<a class="close" (click)="closeAlert()">&times;</a> <h4>{{message.text}}</h4></div>
